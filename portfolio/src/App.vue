@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Nav/>
-    <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -15,17 +14,20 @@ export default {
   components: {
     HelloWorld,
     Nav
+  },
+  beforeCreate: function() {
+      document.body.className = 'home';
   }
 }
 </script>
 
 <style>
+body.home {
+    background: #263238;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+color: #ECEFF1;
+background: #263238;
 }
 </style>
