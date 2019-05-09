@@ -43,7 +43,7 @@ h2{
 
 #navbarNav{
 
-    margin-left: 25rem;
+    margin-left: 28%;
 
 }
 
