@@ -28,11 +28,11 @@ export default {
 
 <style>
 body.home {
-    background: #263238;
+    background: #252934;;
 }
 #app {
 
 color: #ECEFF1;
-background: #263238;
+background: #252934;;
 }
 </style>
