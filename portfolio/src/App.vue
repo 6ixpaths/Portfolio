@@ -3,6 +3,7 @@
     <Nav/>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <About/>
+    <Skills/>
     <Contact/>
   </div>
 </template>
@@ -11,6 +12,7 @@
 
 import Nav from './components/Nav.vue'
 import About from './components/About.vue'
+import Skills from './components/Skills.vue'
 import Contact from './components/Contact.vue'
 
 export default {
@@ -18,6 +20,7 @@ export default {
   components: {
     Nav,
     About,
+    Skills,
     Contact
   },
   beforeCreate: function() {
