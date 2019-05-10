@@ -3,13 +3,15 @@
  <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="75" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
       <path d="M0 0 L50 100 L100 0 Z" fill="white" stroke="white"></path>
     </svg>-->       
-        <div class="row justify-content-center">
+        <div class="row mb-4">
             <div class="col-12 text-center mb-4">
                 <h1>CONTACT</h1>
                 <div class="header-bar mx-auto"></div>
                 <p class="mt-4">Have a question or want to work together?</p>
             </div>
-            <div class="col-lg-5">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-sm-9">
                 <form>
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -56,15 +58,6 @@ export default {
 <style scoped>
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
-
-.header-bar{
-
-    width: 110px;
-    height: 4px;
-    background-color: #FFFFFF;
-
-
-}
 
 p{
 
