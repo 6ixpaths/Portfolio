@@ -3,8 +3,8 @@
         <div class="row align-items-center row justify-content-around index-nav-bar">
             <div class="col-lg-8 col">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <h2 class="" href="#">RAM RAJA</h2>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <h1 class="" href="#">RAM RAJA</h1>
+                    <button class="navbar-toggler btn-navbar-sm navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -13,7 +13,7 @@
                                 <a class="nav-link" href="#">ABOUT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">WORK</a>
+                                <a class="nav-link" href="">SKILLS</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="">CONTACT</a>
@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 
-h2{
+h1{
 
     margin-bottom: 0;
     color: #90A4AE;
