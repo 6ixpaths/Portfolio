@@ -30,12 +30,32 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+h2, a, p{
+
+  font-family: 'Roboto', sans-serif;
+
+}
+
 body.home {
     background: #252934;;
 }
+
 #app {
 
-color: #ECEFF1;
-background: #252934;;
+  color: #ECEFF1;
+  background: #252934;
+
 }
+
+.header-bar{
+
+    width: 5%;
+    height: 4px;
+    background-color: #FFFFFF;
+
+
+}
+
 </style>
