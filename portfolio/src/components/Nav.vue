@@ -10,13 +10,13 @@
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                         <ul class="nav nav-pills nav-fill flex-column flex-sm-row nav-primary">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">ABOUT</a>
+                                <a class="nav-link" v-on:click="scrollTo" href="#">ABOUT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">SKILLS</a>
+                                <a class="nav-link" href="#">SKILLS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">CONTACT</a>
+                                <a class="nav-link" href="#">CONTACT</a>
                             </li>
                         </ul>
                     </div>
@@ -28,7 +28,19 @@
 
 <script>
 export default {
-  name: 'Nav'
+  name: 'Nav',
+  methods: {
+      
+      scrollTo(){
+
+          //Another way to pass to parent without child trigger method with v-on
+          //this.$parent.scrollTo();
+          this.$emit('scrollTo');
+          //console.log(this.$root.name);
+
+      }
+
+    }
 }
 </script>
 
