@@ -77,10 +77,12 @@ label{
 
 .input-prepend{
 
-
-    background-color: #FFFFFF;
+    border-radius: 0;
+    border-color: #04C2C9;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    background-color: #37474F;
+
 }
 
 img{
@@ -89,26 +91,29 @@ img{
 
 }
 
-input{
+input, input:focus, textarea, textarea:focus{
 
+    border-radius: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-
+    border-color: #04C2C9;
+    background-color: #37474F;
 }
-
+/*
 textarea{
 
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 
 }
-
+*/
 .btn-submit{
 
     width: 15%;
     font-size: 1.25rem;
     background-color: #04C2C9;
     border: none;
+    border-radius: 0;
 
 }
 
