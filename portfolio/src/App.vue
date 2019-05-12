@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <Nav/>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Nav v-on:scrollTo="scrollTo()"/>
     <About/>
     <Skills/>
-    <Contact/>
+    <Contact class="Contact"/>
+    <Footer/>
   </div>
 </template>
 
@@ -14,6 +14,7 @@ import Nav from './components/Nav.vue'
 import About from './components/About.vue'
 import Skills from './components/Skills.vue'
 import Contact from './components/Contact.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'app',
