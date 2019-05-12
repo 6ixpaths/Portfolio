@@ -128,7 +128,7 @@ textarea{
 
     .btn-submit{
 
-        width: 25%;
+        width: 90px;
 
     }
 
