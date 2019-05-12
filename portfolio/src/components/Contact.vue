@@ -63,6 +63,7 @@ p{
 
     color: #04C2C9;
     font-size: 1.25rem;
+    font-weight: 300;
 }
 
 label{
