@@ -25,11 +25,22 @@ export default {
     Contact,
     Footer
   },
+  methods: {
+
+    scrollTo(){
+
+      console.log("METHOD RECIEVED FROM CHILD EMIT");
+      window.HTMLElement.prototype.scrollIntoView = function() {};
+      var x= document.getElementsByClassName("Contact");
+      x.scrollIntoView({ behavior: 'smooth'});
+
+    }
+
   },
   beforeCreate: function() {
       document.body.className = 'home';
   }
-}
+  }
 </script>
 
 <style>
