@@ -65,7 +65,7 @@ body.home {
 
 .header-bar{
 
-    width: 5%;
+    width: 95px;
     height: 4px;
     background-color: #FFFFFF;
 

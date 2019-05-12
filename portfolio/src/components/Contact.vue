@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-xl-5 col-sm-9">
+            <div class="col-xl-5 col-md-8 col-11">
                 <form>
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name">Email address</label>
+                        <label for="name">Email Address</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/inbox.svg"/></span>
                             <input class="form-control" id="">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group">
 
-                        <label for="exampleFormControlTextarea1">Example textarea</label>
+                        <label for="exampleFormControlTextarea1">Message</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/pencil.svg"/></span>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
@@ -70,7 +70,7 @@ label{
 
     color: #90A4AE;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 1.25rem;    
 
 }
@@ -78,16 +78,17 @@ label{
 .input-prepend{
 
     border-radius: 0;
-    border-color: #04C2C9;
+    border-color: #455A64;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    background-color: #37474F;
+    border-right: none;
+    background-color: #263238;
 
 }
 
 img{
 
-    height: 1.25vw;
+    height: 21px;
 
 }
 
@@ -96,7 +97,7 @@ input, input:focus, textarea, textarea:focus{
     border-radius: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border-color: #04C2C9;
+    border-color: #455A64;
     background-color: #37474F;
 }
 /*
@@ -125,9 +126,9 @@ textarea{
 
 @media (max-width: 575.98px){
 
-    img{
+    .btn-submit{
 
-        height: 5.25vw;
+        width: 25%;
 
     }
 

@@ -69,6 +69,12 @@ h1{
 
 @media (max-width: 575.98px){
 
+    h1{
+
+        letter-spacing: 0.2rem;
+
+    }
+
     #navbarNav{
 
         margin-left: 0;
