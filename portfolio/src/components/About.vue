@@ -7,7 +7,7 @@
         </div>
     </div>    
     <div class="row justify-content-center">
-        <div class="col-xl-5 col-lg-7 col-sm-9 col-11">
+        <div class="col-xl-5 col-lg-7 col-11">
             <div v-for="(aboutinfo, index) in aboutinfos" v-bind:key="aboutinfo.id" class="row my-5 py-4">
                 <template v-if="index % 2 != 0">
                     <div class="col-sm-8 col-12 order-sm-1 order-2 text-center">
@@ -92,7 +92,8 @@ p{
 
 img{
 
-    height: 8vw;
+    /*height: 8vw;*/
+    height: 153.6px;
     object-fit: cover;
 
 }
