@@ -8,7 +8,7 @@
     </div>    
     <div class="row justify-content-center">
         <div class="col-xl-5 col-lg-7 col-11">
-            <div v-for="(aboutinfo, index) in aboutinfos" v-bind:key="aboutinfo.id" class="row my-5 py-4">
+            <div v-for="(aboutinfo, index) in aboutinfos" v-bind:key="aboutinfo.id" class="row my-3 my-sm-5 py-4">
                 <template v-if="index % 2 != 0">
                     <div class="col-sm-8 col-12 order-sm-1 order-2 text-center">
                         <h2 class=mt-3>{{aboutinfo.header}}</h2>
@@ -41,18 +41,18 @@ export default {
 
             aboutinfos: [
                 {
-                   header: 'DESIGN WHAT YOU WANT',
-                   info: 'Build prototype and wireframes. Bring the best in UI/UX development.',
+                   header: 'DESIGN',
+                   info: 'Build prototype and design wireframes. Bring the latest in design languages to implement elegant and functional in UI/UX for the end user.',
                    imgURL: require('../assets/graphic-design.svg')
                 },
                 {
-                   header: 'BUILD WHAT YOU WANT',
-                   info: 'I can create fully responsive and interactive web pages conveying the message that you need. Can build SPA or full front & backend depending on your need.',
+                   header: 'BUILD',
+                   info: 'Create fully responsive and interactive web pages conveying the message that you need. Can build SPA or full front & backend depending project scope.',
                    imgURL: require('../assets/coding.svg')
                 },
                 {
-                   header: 'HELP DEPLOY',
-                   info: 'Help with server setup, migration & hosting. Manage servers so that you don\'t have to.',
+                   header: 'DEPLOY',
+                   info: 'Help with server setup, migration & hosting. Create quick & fast development pipelines for faster delivery to production',
                    imgURL: require('../assets/server.svg')
                 }
             ]
@@ -98,22 +98,11 @@ img{
 
 }
 
-/*MEDIUM DEVICES*/
-@media (min-width: 768px) and (max-width: 991.98px){
-
-    img{
-
-        height: 18vw;
-
-    }
-    
-}
-
 @media (max-width: 575.98px){
 
     img{
 
-        height: 50vw;
+        height: 205px;
 
     }
 
