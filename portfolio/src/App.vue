@@ -22,7 +22,9 @@ export default {
     Nav,
     About,
     Skills,
-    Contact
+    Contact,
+    Footer
+  },
   },
   beforeCreate: function() {
       document.body.className = 'home';
