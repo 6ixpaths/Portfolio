@@ -1,7 +1,7 @@
 <template>
     <div class='container-fluid py-3'>
         <div class="row align-items-center row justify-content-around index-nav-bar">
-            <div class="col-lg-8 col">
+            <div class="col-xl-8 col-lg-10 col">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <h1 class="" href="#">RAM RAJA</h1>
                     <button class="navbar-toggler btn-navbar-sm navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,12 +50,13 @@ h1{
 
     margin-bottom: 0;
     color: #90A4AE;
+    letter-spacing: 0.375rem;
 
 }
 
 #navbarNav{
 
-    margin-left: 28%;
+    margin-left: 18%;
 
 }
 
