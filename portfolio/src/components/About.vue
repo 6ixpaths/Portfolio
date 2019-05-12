@@ -7,22 +7,22 @@
         </div>
     </div>    
     <div class="row justify-content-center">
-        <div class="col-lg-5 col-11">
+        <div class="col-xl-5 col-lg-7 col-sm-9 col-11">
             <div v-for="(aboutinfo, index) in aboutinfos" v-bind:key="aboutinfo.id" class="row my-5 py-4">
                 <template v-if="index % 2 != 0">
-                    <div class="col-lg-8 col-12 order-lg-1 order-2 text-center">
+                    <div class="col-sm-8 col-12 order-sm-1 order-2 text-center">
                         <h2 class=mt-3>{{aboutinfo.header}}</h2>
                         <p class="text-left mt-3">{{ aboutinfo.info }}</p>
                     </div>
-                    <div class="col-lg-4 col-12 order-lg-2 order-1 text-center">
+                    <div class="col-sm-4 col-12 order-sm-2 order-1 text-center">
                         <img class="img-fluid" v-bind:src="aboutinfo.imgURL" />
                     </div>
                 </template>
                 <template v-else>
-                    <div class="col-lg-4 col-12 text-center">
+                    <div class="col-sm-4 col-12 text-center">
                         <img class="img-fluid" v-bind:src="aboutinfo.imgURL" />
                     </div>
-                    <div class="col-lg-8 col-12 text-center">
+                    <div class="col-sm-8 col-12 text-center">
                         <h2 class=mt-3>{{aboutinfo.header}}</h2>
                         <p class="text-left mt-3">{{ aboutinfo.info }}</p>
                     </div>
@@ -63,6 +63,7 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
 template:first-child{
 
@@ -73,6 +74,13 @@ template:first-child{
 h1, h2, p{
 
     color: #252934;
+
+}
+
+p{
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 
 }
 
@@ -87,6 +95,17 @@ img{
     height: 8vw;
     object-fit: cover;
 
+}
+
+/*MEDIUM DEVICES*/
+@media (min-width: 768px) and (max-width: 991.98px){
+
+    img{
+
+        height: 18vw;
+
+    }
+    
 }
 
 @media (max-width: 575.98px){
