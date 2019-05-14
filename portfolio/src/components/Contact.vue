@@ -17,21 +17,21 @@
                         <label for="name">Name</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/person.svg"/></span>
-                            <input class="form-control" id="" aria-describedby="basic-addon1">
+                            <input class="form-control input-custom" id="" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name">Subject</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/book.svg"/></span>
-                            <input class="form-control" id="" aria-describedby="basic-addon1">
+                            <input class="form-control input-custom" id="" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name">Email Address</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/inbox.svg"/></span>
-                            <input class="form-control" id="">
+                            <input class="form-control input-custom" id="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -39,7 +39,7 @@
                         <label for="exampleFormControlTextarea1">Message</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/pencil.svg"/></span>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control input-custom" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-submit my-2">Submit</button>
@@ -58,6 +58,12 @@ export default {
 <style scoped>
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+h1{
+
+    color: #ECEFF1;
+
+}
 
 p{
 
@@ -92,14 +98,26 @@ img{
 
 }
 
-input, input:focus, textarea, textarea:focus{
+.input-custom{
 
+    color: #04C2C9;
+    font-weight: 300;
     border-radius: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-color: #455A64;
     background-color: #37474F;
+    
+
 }
+
+.input-custom:focus{
+
+    background-color: #37474F;
+    box-shadow: 0 0 0 0.1rem #04C2C9;
+
+}
+
 /*
 textarea{
 
@@ -110,7 +128,7 @@ textarea{
 */
 .btn-submit{
 
-    width: 15%;
+    width: 115px;
     font-size: 1.25rem;
     background-color: #04C2C9;
     border: none;
@@ -121,16 +139,6 @@ textarea{
 .btn-submit:hover{
 
     background-color: #018786;
-
-}
-
-@media (max-width: 575.98px){
-
-    .btn-submit{
-
-        width: 90px;
-
-    }
 
 }
 

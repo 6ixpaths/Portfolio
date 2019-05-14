@@ -67,7 +67,7 @@ export default {
 h2,a,p {
 
   font-family: "Roboto", sans-serif;
-  
+
 }
 
 body{
@@ -79,7 +79,7 @@ body{
 .header-bar {
   width: 95px;
   height: 4px;
-  background-color: #ffffff;
+  background-color: #ECEFF1;
 }
 
 </style>

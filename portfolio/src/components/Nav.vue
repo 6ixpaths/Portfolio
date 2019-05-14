@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid py-3 sticky-top" style="background-color: #252934;">
+    <div class="container-fluid py-3 sticky-top" style="background-color: #252934; border-bottom: 3px solid #04C2C9">
         <div class="row align-items-center row justify-content-around index-nav-bar">
             <div class="col-xl-8 col-lg-10 col">
                 <nav class="navbar navbar-expand-lg navbar-light">

@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center my-2">
             <div class="col">
                 <div class="row justify-content-center">

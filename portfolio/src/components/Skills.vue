@@ -1,6 +1,6 @@
 <template>
-    <div class="container-fluid my-5">
-        <div class="row my-5">
+    <div class="container-fluid mb-5 py-5" style="background-color: #252934;">
+        <div class="row mb-5">
             <div class="col-12 text-center mb-4">
                 <h1>SKILLS</h1>
                 <div class="header-bar mx-auto"></div>
@@ -106,7 +106,7 @@ export default {
     name: 'Skills',
     data(){
         return{
-
+            /*
             cols: [
                 {
                 colicons: [
@@ -126,13 +126,19 @@ export default {
                 //require('../assets/skill_icons/postgresql-icon.svg')
                 }
             ]
-
+            */
         }
     }
 }
 </script>
 
 <style scoped>
+
+h1{
+
+    color: #ECEFF1;
+
+}
 
 .col-offset{
 
