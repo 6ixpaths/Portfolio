@@ -8,7 +8,7 @@
     </div>    
     <div class="row justify-content-center">
         <div class="col-xl-5 col-lg-7 col-11">
-            <div v-for="(aboutinfo, index) in aboutinfos" v-bind:key="aboutinfo.id" class="row my-3 my-sm-5 py-4">
+            <div v-for="(aboutinfo, index) in aboutinfos" v-bind:key="aboutinfo.id" class="row my-3 my-sm-5 py-4" v-bind="{'data-aos': index %2 == 0 ? 'fade-left': 'fade-right'}">
                 <template v-if="index % 2 != 0">
                     <div class="col-sm-8 col-12 order-sm-1 order-2 text-center">
                         <h2 class=mt-3>{{aboutinfo.header}}</h2>
@@ -34,6 +34,10 @@
 </template>
 
 <script>
+
+import AOS from 'aos'
+import "aos/dist/aos.css"
+
 export default {
     name: 'About',
     data(){ 
@@ -57,6 +61,17 @@ export default {
                 }
             ]
         }
+    },
+    created: function(){
+        
+        AOS.init({
+
+            duration: 1000,
+            once: true,
+            easing: 'ease'
+
+        });
+
     }
 
 }
