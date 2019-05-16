@@ -9,125 +9,70 @@
         <div class="row justify-content-center">
             <div class="col-lg-10 col-12">
                 <div class="row justify-content-center">
-                    <div class="col-sm-2 col-12">
+                    <div v-for="(skillIcons, index) in getColumnArray" style="color:white;" v-bind:key="skillIcons.id" v-bind:class="[{'col-offset' : index % 2 != 0}, 'col-sm-2 col-12']">
                         <div class=row>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/postgresql.svg' />
-                            </div>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/digitalocean.svg' />
-                            </div>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/nginx.svg' />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2 col-12 col-offset">
-                        <div class=row>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/vuejs.svg' />
-                            </div>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/javascript.svg' />
-                            </div>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/npm.svg' />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2 col-12">
-                        <div class=row>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/java-icon.svg' />
-                            </div>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/python.svg' />
-                            </div>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/django.svg' />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2 col-12 col-offset">
-                        <div class=row>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/html5.svg' />
-                            </div>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/css3.svg' />
-                            </div>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/sass.svg' />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2 col-12">
-                        <div class=row>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/vscode.svg' />
-                            </div>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/github.svg' />
-                            </div>
-                            <div class="col-sm-12 col-4 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/bootstrap.svg' />
+                            <div v-for="skillIcon in skillIcons" v-bind:key="skillIcon.id" class="col-sm-12 col-4 icon-container text-center" data-aos="flip-up">
+                                <img class="img-fluid img-icon" v-bind:src="skillIcon" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--
-            <div class="row kotai" v-for="(coli, index) in cols" v-bind:key="coli.id">
-                <template>
-                    <div class="col-4 col-offset">
-                        {{coli.colicons}}
-                        <div class=row v-for="inde">
-                            <div class="col-sm-12 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/postgresql.svg' />
-                            </div>
-                            <div class="col-sm-12 icon-container text-center">
-                                <img class="img-fluid img-icon" src='../assets/skill_icons/digitalocean.svg' />
-                            </div>
-                        </div>
-                    </div>
-                </template>
-            </div>
-            -->
-            <!--
-            <div class="col-lg-4 icon-container text-center px-3 py-5" v-for="icon in icons" v-bind:key="icon.id">
-                <img class="img-fluid img-icon" v-bind:src="icon" />
-            </div>-->
         </div>
     </div>
 </template>
 
 <script>
+import _ from "lodash"
+import AOS from 'aos'
+import "aos/dist/aos.css"
+
 export default {
     name: 'Skills',
     data(){
         return{
-            /*
-            cols: [
-                {
-                colicons: [
-                    require('../assets/skill_icons/postgresql.svg'),
-                    require('../assets/skill_icons/digitalocean.svg'),
-                ],
-                colicons: [
-                    require('../assets/skill_icons/java-icon.svg'),
-                    require('../assets/skill_icons/python.svg'),
-                    require('../assets/skill_icons/django.svg'),
-                ],
-                colicons: [
-                    require('../assets/skill_icons/vuejs.svg'),
-                    require('../assets/skill_icons/javascript.svg'),
-                ]
-                
-                //require('../assets/skill_icons/postgresql-icon.svg')
-                }
+
+            skillIcons: [
+
+                require('../assets/skill_icons/postgresql.svg'),
+                require('../assets/skill_icons/digitalocean.svg'),
+                require('../assets/skill_icons/nginx.svg'),
+                require('../assets/skill_icons/vuejs.svg'),
+                require('../assets/skill_icons/javascript.svg'),
+                require('../assets/skill_icons/npm.svg'),
+                require('../assets/skill_icons/java-icon.svg'),
+                require('../assets/skill_icons/python.svg'),
+                require('../assets/skill_icons/django.svg'),
+                require('../assets/skill_icons/html5.svg'),
+                require('../assets/skill_icons/css3.svg'),
+                require('../assets/skill_icons/sass.svg'),
+                require('../assets/skill_icons/vscode.svg'),
+                require('../assets/skill_icons/github.svg'),
+                require('../assets/skill_icons/bootstrap.svg')
+
             ]
-            */
         }
+    },
+    computed:{
+
+        getColumnArray(){
+
+            return _.chunk(this.skillIcons, 3)
+
+        }
+
+
+    },
+    created: function(){
+        
+        AOS.init({
+
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out-cubic'
+
+        });
+
     }
 }
 </script>
