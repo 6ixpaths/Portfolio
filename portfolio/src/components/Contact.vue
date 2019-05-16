@@ -12,7 +12,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-xl-5 col-md-8 col-11">
-                <form>
+                <form v-on:submit="submit()">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <div class="input-group-prepend">
@@ -50,8 +50,29 @@
 </template>
 
 <script>
+
+const axios = require('axios')
+
 export default {
-  name: 'Contact'
+  name: 'Contact',
+  methods: {
+
+      submit(){
+
+          axios.get("http://localhost:3000/").then(function(response){
+
+              console.log("SUCESSS");
+              console.log(response);
+
+          }).catch(function(error){
+
+              console.log(error);
+
+          });
+
+      }
+
+  }
 }
 </script>
 
