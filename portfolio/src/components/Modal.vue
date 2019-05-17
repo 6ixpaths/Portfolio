@@ -30,7 +30,6 @@
 
 <script>
 import $ from 'jquery'
-import 'bootstrap/dist/js/bootstrap.min.js'
 
 export default {
     name: 'Modal',
