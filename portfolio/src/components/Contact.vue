@@ -1,6 +1,8 @@
 <template>
-    <div class='container-fluid my-5 py-5' style="background-color:#212121;"><!--
- <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="75" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
+    <div class='container-fluid my-5 py-5' style="background-color:#212121;">
+    <Modal v-bind:modalType="status" ref="modal"/>
+    <!--
+    <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="75" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
       <path d="M0 0 L50 100 L100 0 Z" fill="white" stroke="white"></path>
     </svg>-->       
         <div class="row mb-4">
@@ -12,7 +14,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-xl-5 col-md-8 col-11">
-                <form v-on:submit="submit()">
+                <form v-on:submit.prevent="submit()">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <div class="input-group-prepend">
@@ -50,29 +52,45 @@
 </template>
 
 <script>
-
+import Modal from "./Modal.vue";
 const axios = require('axios')
 
 export default {
-  name: 'Contact',
-  methods: {
+    name: 'Contact',
+    data(){
 
-      submit(){
+        return{
+            show: true,
+            status: "",
+        }
+    
+    },
+    components: {
+        Modal
+    },
+    methods: {
 
-          axios.get("http://localhost:3000/").then(function(response){
+        submit(){
 
-              console.log("SUCESSS");
-              console.log(response);
+            //User fat arrow to prevent creating local function scope
+            axios.get("http://localhost:3000/").then( response => {
 
-          }).catch(function(error){
+                console.log("SUCESSS");
+                console.log(response);
+                this.status = "success";
 
-              console.log(error);
+                //Another way to access modal (child) component method
+                //this.$refs.modal.showModal();
 
-          });
+            }).catch(function(error){
 
-      }
+                console.log(error);
 
-  }
+            });
+
+        }
+
+    }
 }
 </script>
 
