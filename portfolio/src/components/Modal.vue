@@ -11,7 +11,6 @@
                 <div class="modal-header">
                     <div class="col">
                         <h2 class="modal-title text-center" id="">THANK YOU</h2>
-                        <h2 class="modal-title text-center" id="">{{modalType}}</h2>
                     </div>
                 </div>
                 <div class="modal-body text-center py-4">
