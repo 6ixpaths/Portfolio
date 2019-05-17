@@ -5,15 +5,18 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "nodemon ./server/app.js"
   },
   "dependencies": {
     "aos": "^2.3.4",
     "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -24,6 +27,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.12.0",
+    "nodemon": "^1.19.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
   },
@@ -36,7 +40,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

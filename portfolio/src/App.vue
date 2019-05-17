@@ -11,6 +11,8 @@
 
 <script>
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import Nav from "./components/Nav.vue";
 import About from "./components/About.vue";
 import Skills from "./components/Skills.vue";
