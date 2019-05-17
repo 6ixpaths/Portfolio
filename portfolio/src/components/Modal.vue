@@ -11,7 +11,7 @@
                 <div class="modal-header">
                     <div class="col">
                         <h2 class="modal-title text-center" id="">THANK YOU</h2>
-                        <span aria-hidden="true">&times;</span>
+                        <h2 class="modal-title text-center" id="">{{modalType}}</h2>
                     </div>
                 </div>
                 <div class="modal-body text-center py-4">
@@ -29,8 +29,51 @@
 
 
 <script>
+import $ from 'jquery'
+import 'bootstrap/dist/js/bootstrap.min.js'
 
+export default {
+    name: 'Modal',
+    props: ['modalType'],
+    data(){
+        
+        return{
 
+            check: require('../assets/contact/modal/check.svg')
+
+        }
+
+    },
+    methods: {
+
+        showModal(modalType){
+            
+            if(modalType === "success"){
+
+                //Manually set modal options
+                /*
+                $('#modalCenter').modal({
+
+                    backdrop: true,
+                    keyboard: true,
+                    focus: true,
+                    show: true
+
+                });*/
+                $('#modalCenter').modal('show');
+
+            }else{
+
+                console.log("error");
+                
+            }
+        }
+    },
+    watch: {
+
+        modalType: function(){
+            this.showModal(this.modalType);
+        }
 
     }
 }
