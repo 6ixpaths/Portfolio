@@ -78,6 +78,12 @@ h1{
 
 }
 
+.nav-link:hover{
+
+    color: #04C2C9;
+
+}
+
 @media (max-width: 575.98px){
 
     h1{
