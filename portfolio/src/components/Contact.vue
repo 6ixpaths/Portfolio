@@ -78,7 +78,7 @@ export default {
         submit(){
 
             //User fat arrow to prevent creating local function scope
-            axios.post("http://localhost:3000/sendMail", {
+            axios.post("https://localhost:3000/sendMail", {
                 
                 name: this.name, 
                 email: this.email,
