@@ -1,9 +1,14 @@
 const express = require('express')
 const cors = require('cors')
-
+const bodyParser = require('body-parser')
+const nodemailer = require('nodemailer')
 const app = express()
-app.use(cors())
 const port = 3000
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors())
+
 
 app.get('/', (req, res) => {
     
@@ -13,14 +18,48 @@ app.get('/', (req, res) => {
 })
  
 
-app.get('/sample', (req, res) => {
+app.post('/sendMail', (req, res) => {
 
-    console.log("REQUEST HIT");
+    console.log("POST SERVER HIT");
+    console.log(req.body.name)
+    console.log(req.body.email)
 
-    res.send({
-        success: true,
-        message: 'Post saved successfully!'
-    })
+    var smtpTransport = nodemailer.createTransport({
+
+        service: 'Gmail',
+        port: 465,
+        auth: {
+            user: 'ramraja.portfolio@gmail.com',
+            pass: 'Diablos07'
+        }
+
+    });
+
+    var mailOptions = {
+        from: req.body.email,
+        to: 'ramraja.vii@gmail.com',
+        subject: 'Message from portfolio',
+        html: `<p>${req.body.name}</p>
+                <p>${req.body.email}</p>
+                <p>${req.body.message}</p>`
+    };
+
+    smtpTransport.sendMail(mailOptions,
+        (error, res) => {
+            
+            if(error) {
+                
+                res.send(error)
+
+            }else {
+                
+                res.send('Message Sent')
+
+            }
+
+            smtpTransport.close();
+
+    });
 
 })
 
