@@ -19,21 +19,21 @@
                         <label for="name">Name</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/person.svg"/></span>
-                            <input class="form-control input-custom" id="" aria-describedby="basic-addon1">
+                            <input v-model="name" class="form-control input-custom" id="" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name">Subject</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/book.svg"/></span>
-                            <input class="form-control input-custom" id="" aria-describedby="basic-addon1">
+                            <input v-model="subject" class="form-control input-custom" id="" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name">Email Address</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/inbox.svg"/></span>
-                            <input class="form-control input-custom" id="">
+                            <input v-model="email" class="form-control input-custom" id="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -41,7 +41,7 @@
                         <label for="exampleFormControlTextarea1">Message</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/pencil.svg"/></span>
-                            <textarea class="form-control input-custom" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea v-model="message" class="form-control input-custom" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-submit my-2">Submit</button>
@@ -60,8 +60,13 @@ export default {
     data(){
 
         return{
-            show: true,
+
             status: "",
+            email: "",
+            name: "",
+            subject: "",
+            message: ""
+            
         }
     
     },
@@ -73,20 +78,28 @@ export default {
         submit(){
 
             //User fat arrow to prevent creating local function scope
-            axios.get("http://localhost:3000/").then( response => {
+            axios.post("http://localhost:3000/sendMail", {
+                
+                name: this.name, 
+                email: this.email,
+                subject: this.subject,
+                message: this.message
+                
+                }).then( response => {
 
-                console.log("SUCESSS");
-                console.log(response);
-                this.status = "success";
+                    console.log("SUCESSS");
+                    console.log(response);
+                    this.status = "success";
 
-                //Another way to access modal (child) component method
-                //this.$refs.modal.showModal();
+                    //Another way to access modal (child) component method
+                    //this.$refs.modal.showModal();
 
-            }).catch(function(error){
+                }).catch(function(error){
 
-                console.log(error);
+                    this.status = "error";
+                    console.log(error);
 
-            });
+                });
 
         }
 
@@ -152,6 +165,7 @@ img{
 
 .input-custom:focus{
 
+    color: #04C2C9;
     background-color: #37474F;
     box-shadow: 0 0 0 0.1rem #04C2C9;
 
