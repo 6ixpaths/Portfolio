@@ -61,11 +61,11 @@ export default {
 
         return{
 
-            status: "",
-            email: "",
-            name: "",
-            subject: "",
-            message: ""
+            status: null,
+            email: null,
+            name: null,
+            subject: null,
+            message: null
 
         }
     
@@ -78,7 +78,7 @@ export default {
         submit(){
 
             //User fat arrow to prevent creating local function scope
-            axios.post("https://localhost:3000/sendMail", {
+            axios.post("http://localhost:3000/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
                 
                 name: this.name, 
                 email: this.email,

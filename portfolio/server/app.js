@@ -23,7 +23,8 @@ app.post('/sendMail', (req, res) => {
     console.log("POST SERVER HIT");
     console.log(req.body.name)
     console.log(req.body.email)
-
+    res.send("RECEIVED POST");
+    
     var smtpTransport = nodemailer.createTransport({
 
         service: 'Gmail',
@@ -53,14 +54,15 @@ app.post('/sendMail', (req, res) => {
 
             }else {
                 
-                res.send('Message Sent')
+                console.log("MESSAGE SENT");
+                res.send("MESSAGE SENT");
 
             }
 
             smtpTransport.close();
 
     });
-
+    
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
