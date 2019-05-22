@@ -8,10 +8,7 @@ const port = 3000
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-res.setHeader('Access-Control-Allow-Origin', '*');
-res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype'); // If needed
-res.setHeader('Access-Control-Allow-Credentials', true);
+
 
 app.get('/', (req, res) => {
     
@@ -22,6 +19,11 @@ app.get('/', (req, res) => {
  
 
 app.post('/sendMail', (req, res) => {
+
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true);
 
     console.log("POST SERVER HIT");
     console.log(req.headers);
