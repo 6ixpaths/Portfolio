@@ -94,7 +94,7 @@ export default {
                     //Another way to access modal (child) component method
                     //this.$refs.modal.showModal();
 
-                }).catch(function(error){
+                }).catch( error => {
 
                     this.status = "error";
                     console.log(error);
