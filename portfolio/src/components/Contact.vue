@@ -78,7 +78,7 @@ export default {
         submit(){
 
             //User fat arrow to prevent creating local function scope
-            axios.post("https://localhost:3000/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
+            axios.post("http://localhost:3000/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
                 
                 name: this.name, 
                 email: this.email,

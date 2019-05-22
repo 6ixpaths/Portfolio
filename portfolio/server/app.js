@@ -2,6 +2,8 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
+const https = require('https');
+const fs = require('fs');
 const app = express()
 const port = 3000
 
@@ -18,7 +20,7 @@ app.get('/', (req, res) => {
 })
  
 
-app.post('/sendMail', (req, res) => {
+app.post('/api/sendMail', (req, res) => {
 
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
@@ -68,5 +70,11 @@ app.post('/sendMail', (req, res) => {
     });
     
 })
-
+/*
+https.createServer({
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem'),
+    passphrase: 'Diablos07'
+}, app).listen(port, () => console.log("HTTPS server listening on port 3000"));
+*/
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
