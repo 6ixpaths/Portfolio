@@ -7,8 +7,11 @@ const port = 3000
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors())
-
+app.use(cors());
+res.setHeader('Access-Control-Allow-Origin', '*');
+res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype'); // If needed
+res.setHeader('Access-Control-Allow-Credentials', true);
 
 app.get('/', (req, res) => {
     
@@ -21,8 +24,7 @@ app.get('/', (req, res) => {
 app.post('/sendMail', (req, res) => {
 
     console.log("POST SERVER HIT");
-    console.log(req.body.name)
-    console.log(req.body.email)
+    console.log(req.headers);
     res.send("RECEIVED POST");
     
     var smtpTransport = nodemailer.createTransport({
