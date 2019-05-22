@@ -33,7 +33,7 @@
                         <label for="name">Email Address</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/inbox.svg"/></span>
-                            <input v-model="email" class="form-control input-custom" id="">
+                            <input type="email" v-model="email" class="form-control input-custom" id="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -66,7 +66,7 @@ export default {
             name: "",
             subject: "",
             message: ""
-            
+
         }
     
     },
