@@ -81,7 +81,7 @@ export default {
         submit(){
             //headers: {"Access-Control-Allow-Origin": "*"}, //INSERT after first brace
             //User fat arrow to prevent creating local function scope
-            axios.post("http://localhost:3000/api/sendMail", {
+            axios.post("http://ramraja.dev/api/sendMail", {
                 
                 name: this.name, 
                 email: this.email,
@@ -108,7 +108,7 @@ export default {
 
         submitGet(){
 
-            axios.get("http://localhost:3000/api/test").then( response => {
+            axios.get("http://ramraja.dev/api/test").then( response => {
 
 
                 console.log(response.data);
