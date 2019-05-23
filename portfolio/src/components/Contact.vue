@@ -79,9 +79,9 @@ export default {
     methods: {
 
         submit(){
-            //headers: {"Access-Control-Allow-Origin": "*"}, //INSERT after first brace
+            // //INSERT after first brace
             //User fat arrow to prevent creating local function scope
-            axios.post("https://ramraja.dev/api/sendMail", {
+            axios.post("https://ramraja.dev/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
                 
                 name: this.name, 
                 email: this.email,
