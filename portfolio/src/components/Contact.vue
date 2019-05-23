@@ -46,9 +46,6 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-submit my-2">Submit</button>
                 </form>
-                <form v-on:submit.prevent="submitGet()">
-                    <button type="submit" class="btn btn-primary btn-submit my-2">Submit</button>
-                </form>
             </div>
         </div>
     </div>
@@ -79,9 +76,10 @@ export default {
     methods: {
 
         submit(){
-            // //INSERT after first brace
+                
             //User fat arrow to prevent creating local function scope
-            axios.post("https://ramraja.dev/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
+            //axios.post("https://ramraja.dev/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
+            axios.post("http://localhost:3000/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
                 
                 name: this.name, 
                 email: this.email,
@@ -92,7 +90,7 @@ export default {
 
                     console.log("SUCESSS");
                     console.log(response);
-                    this.status = "success";
+                    //this.status = "success";
 
                     //Another way to access modal (child) component method
                     //this.$refs.modal.showModal();
@@ -103,26 +101,10 @@ export default {
                     console.log(error);
 
                 });
+            
+            this.status = null;
 
         },
-
-        submitGet(){
-
-            axios.get("https://ramraja.dev/api/test").then( response => {
-
-
-                console.log(response.data);
-                alert(response.data);
-
-                }).catch( error => {
-
-                    console.log(error);
-
-                })
-
-            
-
-        }
 
     }
 }
