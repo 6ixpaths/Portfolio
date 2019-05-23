@@ -76,9 +76,9 @@ export default {
     methods: {
 
         submit(){
-
+            //headers: {"Access-Control-Allow-Origin": "*"}, //INSERT after first brace
             //User fat arrow to prevent creating local function scope
-            axios.post("http://localhost:3000/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
+            axios.post("http://localhost:3000/api/sendMail", {
                 
                 name: this.name, 
                 email: this.email,

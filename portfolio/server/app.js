@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 
-app.get('/', (req, res) => {
+app.get('/api/test', (req, res) => {
     
     console.log("ROOT HIT");
     res.send('Hello World!');
@@ -21,12 +21,12 @@ app.get('/', (req, res) => {
  
 
 app.post('/api/sendMail', (req, res) => {
-
+    /*
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype'); // If needed
     res.setHeader('Access-Control-Allow-Credentials', true);
-
+    */
     console.log("POST SERVER HIT");
     console.log(req.headers);
     res.send("RECEIVED POST");
