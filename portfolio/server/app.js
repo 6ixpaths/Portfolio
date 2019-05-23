@@ -13,7 +13,10 @@ app.use(cors());
 
 
 app.get('/api/test', (req, res) => {
-    
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true);
     console.log("ROOT HIT");
     res.send('Hello World!');
 
