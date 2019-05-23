@@ -46,6 +46,9 @@
                     </div>
                     <button type="submit" class="btn btn-primary btn-submit my-2">Submit</button>
                 </form>
+                <form v-on:submit.prevent="submitGet()">
+                    <button type="submit" class="btn btn-primary btn-submit my-2">Submit</button>
+                </form>
             </div>
         </div>
     </div>
@@ -100,6 +103,24 @@ export default {
                     console.log(error);
 
                 });
+
+        },
+
+        submitGet(){
+
+            axios.get("http://localhost:3000/api/test").then( response => {
+
+
+                console.log(response.data);
+                alert(response.data);
+
+                }).catch( error => {
+
+                    console.log(error);
+
+                })
+
+            
 
         }
 
