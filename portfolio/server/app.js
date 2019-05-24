@@ -49,9 +49,10 @@ app.post('/api/sendMail', (req, res) => {
         from: req.body.email,
         to: 'ramraja.vii@gmail.com',
         subject: 'Message from portfolio',
-        html: `<p>${req.body.name}</p>
-                <p>${req.body.email}</p>
-                <p>${req.body.message}</p>`
+        html: `<p>NAME: ${req.body.name}</p>
+                <p>SUBJECT: ${req.body.subject}</p>
+                <p>EMAIL: ${req.body.email}</p>
+                <p>MESSAGE: ${req.body.message}</p>`
     };
 
     smtpTransport.sendMail(mailOptions,

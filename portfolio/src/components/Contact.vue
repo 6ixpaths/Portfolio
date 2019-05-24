@@ -14,26 +14,26 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-xl-5 col-md-8 col-11">
-                <form v-on:submit.prevent="submit()">
+                <form v-on:submit.prevent="checkForm()">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/person.svg"/></span>
-                            <input v-model="name" class="form-control input-custom" id="" aria-describedby="basic-addon1">
+                            <input v-model="name" v-bind:class="[{'is-invalid' : nameReq}, 'form-control input-custom']" id="" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name">Subject</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/book.svg"/></span>
-                            <input v-model="subject" class="form-control input-custom" id="" aria-describedby="basic-addon1">
+                            <input v-model="subject" v-bind:class="[{'is-invalid' : subjectReq}, 'form-control input-custom']" id="" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name">Email Address</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/inbox.svg"/></span>
-                            <input type="email" v-model="email" class="form-control input-custom" id="">
+                            <input type="email" v-model="email" v-bind:class="[{'is-invalid' : emailReq}, 'form-control input-custom']" id="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -41,12 +41,9 @@
                         <label for="exampleFormControlTextarea1">Message</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/pencil.svg"/></span>
-                            <textarea v-model="message" class="form-control input-custom" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea v-model="message" v-bind:class="[{'is-invalid' : messageReq}, 'form-control input-custom']" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-submit my-2">Submit</button>
-                </form>
-                <form v-on:submit.prevent="submitGet()">
                     <button type="submit" class="btn btn-primary btn-submit my-2">Submit</button>
                 </form>
             </div>
@@ -65,10 +62,14 @@ export default {
         return{
 
             status: null,
-            email: null,
             name: null,
             subject: null,
-            message: null
+            email: null,
+            message: null,
+            nameReq: false,
+            subjectReq: false,
+            emailReq: false,
+            messageReq: false
 
         }
     
@@ -79,9 +80,10 @@ export default {
     methods: {
 
         submit(){
-            // //INSERT after first brace
+                
             //User fat arrow to prevent creating local function scope
-            axios.post("https://ramraja.dev/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
+            //axios.post("https://ramraja.dev/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
+            axios.post("http://localhost:3000/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
                 
                 name: this.name, 
                 email: this.email,
@@ -92,7 +94,7 @@ export default {
 
                     console.log("SUCESSS");
                     console.log(response);
-                    this.status = "success";
+                    //this.status = "success";
 
                     //Another way to access modal (child) component method
                     //this.$refs.modal.showModal();
@@ -103,24 +105,38 @@ export default {
                     console.log(error);
 
                 });
+            
+            this.status = null;
 
         },
+        checkForm(){
 
-        submitGet(){
+            if(!this.name){
 
-            axios.get("https://ramraja.dev/api/test").then( response => {
+                this.nameReq = true;
 
+            }
+            if(!this.subject){
 
-                console.log(response.data);
-                alert(response.data);
+                this.subjectReq = true;
 
-                }).catch( error => {
+            }
+            if(!this.email){
 
-                    console.log(error);
+                this.emailReq = true;
 
-                })
+            }
+            if(!this.message){
 
-            
+                this.messageReq = true;
+
+            }
+
+            if(!this.nameReq && !this. subjectReq && !this.emailReq && !this.messageReq){
+
+                this.submit();
+
+            }
 
         }
 
