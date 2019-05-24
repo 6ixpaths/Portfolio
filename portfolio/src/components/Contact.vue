@@ -14,26 +14,26 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-xl-5 col-md-8 col-11">
-                <form v-on:submit.prevent="submit()">
+                <form v-on:submit.prevent="checkForm()">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/person.svg"/></span>
-                            <input v-model="name" class="form-control input-custom" id="" aria-describedby="basic-addon1">
+                            <input v-model="name" v-bind:class="[{'is-invalid' : nameReq}, 'form-control input-custom']" id="" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name">Subject</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/book.svg"/></span>
-                            <input v-model="subject" class="form-control input-custom" id="" aria-describedby="basic-addon1">
+                            <input v-model="subject" v-bind:class="[{'is-invalid' : subjectReq}, 'form-control input-custom']" id="" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name">Email Address</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/inbox.svg"/></span>
-                            <input type="email" v-model="email" class="form-control input-custom" id="">
+                            <input type="email" v-model="email" v-bind:class="[{'is-invalid' : emailReq}, 'form-control input-custom']" id="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -41,7 +41,7 @@
                         <label for="exampleFormControlTextarea1">Message</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text input-prepend" id="basic-addon1"><img src="../assets/contact/pencil.svg"/></span>
-                            <textarea v-model="message" class="form-control input-custom" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea v-model="message" v-bind:class="[{'is-invalid' : messageReq}, 'form-control input-custom']" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-submit my-2">Submit</button>
@@ -62,10 +62,14 @@ export default {
         return{
 
             status: null,
-            email: null,
             name: null,
             subject: null,
-            message: null
+            email: null,
+            message: null,
+            nameReq: false,
+            subjectReq: false,
+            emailReq: false,
+            messageReq: false
 
         }
     
@@ -105,6 +109,36 @@ export default {
             this.status = null;
 
         },
+        checkForm(){
+
+            if(!this.name){
+
+                this.nameReq = true;
+
+            }
+            if(!this.subject){
+
+                this.subjectReq = true;
+
+            }
+            if(!this.email){
+
+                this.emailReq = true;
+
+            }
+            if(!this.message){
+
+                this.messageReq = true;
+
+            }
+
+            if(!this.nameReq && !this. subjectReq && !this.emailReq && !this.messageReq){
+
+                this.submit();
+
+            }
+
+        }
 
     }
 }
