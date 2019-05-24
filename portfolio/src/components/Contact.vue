@@ -77,10 +77,55 @@ export default {
     components: {
         Modal
     },
+    computed: {
+
+        nameValidate(){
+
+            if(this.name){
+
+                this.nameReq = false;
+                return true;
+            }else
+                return false;
+
+        },
+        subValidate(){
+
+            if(this.subject){
+
+                this.subjectReq = false;
+                return true;
+            }else
+                return false;
+
+        },
+        emailValidate(){
+
+            if(this.email){
+
+                this.emailReq = false;
+                return true;
+            }else
+                return false;
+
+        },
+        msgValidate(){
+
+            if(this.message){
+
+                this.messageReq = false;
+                return true;
+            }else
+                return false;
+
+        }
+
+
+    },
     methods: {
 
         submit(){
-                
+            
             //User fat arrow to prevent creating local function scope
             axios.post("https://ramraja.dev/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
             //axios.post("http://localhost:3000/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
@@ -92,50 +137,49 @@ export default {
                 
                 }).then( response => {
 
-                    console.log("SUCESSS");
-                    console.log(response);
+                    //console.log("SUCESSS");
+                    //console.log(response);
                     this.status = "success";
-
                     //Another way to access modal (child) component method
                     //this.$refs.modal.showModal();
 
                 }).catch( error => {
 
-                    console.log("ERROR");
-                    console.log(error);
+                    //console.log("ERROR");
+                    //console.log(error);
                     this.status = "error";
 
                 });
-            
+                
             this.status = null;
 
         },
         checkForm(){
 
-            if(!this.name){
+            if(!this.nameValidate){
 
                 this.nameReq = true;
 
             }
-            if(!this.subject){
+            if(!this.subValidate){
 
                 this.subjectReq = true;
 
             }
-            if(!this.email){
+            if(!this.emailValidate){
 
                 this.emailReq = true;
 
             }
-            if(!this.message){
+            if(!this.msgValidate){
 
                 this.messageReq = true;
 
             }
 
             if(!this.nameReq && !this. subjectReq && !this.emailReq && !this.messageReq){
-
-                this.submit();
+                console.log("FORM SUBMITTED");
+                //this.submit();
 
             }
 
