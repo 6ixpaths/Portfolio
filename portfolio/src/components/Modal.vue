@@ -88,7 +88,7 @@ export default {
             }else{
 
                 $('#modalError').modal('show');
-                console.log("error");
+                console.log("modal error");
                 this.status = null;
             }
         }
@@ -97,9 +97,9 @@ export default {
         
         modalType: function(){
 
-            if( this.modalType != null){
-
-                this.showModal(this.status);
+           if(this.modalType != null){
+                console.log("STATUS RECEIVED: " + this.modalType)
+                this.showModal(this.modalType);
 
             }
 
