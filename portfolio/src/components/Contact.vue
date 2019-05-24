@@ -94,15 +94,16 @@ export default {
 
                     console.log("SUCESSS");
                     console.log(response);
-                    //this.status = "success";
+                    this.status = "success";
 
                     //Another way to access modal (child) component method
                     //this.$refs.modal.showModal();
 
                 }).catch( error => {
 
-                    this.status = "error";
+                    console.log("ERROR");
                     console.log(error);
+                    this.status = "error";
 
                 });
             
