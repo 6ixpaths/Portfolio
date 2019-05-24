@@ -77,9 +77,9 @@ export default {
     components: {
         Modal
     },
-    computed: {
+    watch: {
 
-        nameValidate(){
+        name: function(){
 
             if(this.name){
 
@@ -89,7 +89,7 @@ export default {
                 return false;
 
         },
-        subValidate(){
+        subject: function(){
 
             if(this.subject){
 
@@ -99,7 +99,7 @@ export default {
                 return false;
 
         },
-        emailValidate(){
+        email: function(){
 
             if(this.email){
 
@@ -109,7 +109,7 @@ export default {
                 return false;
 
         },
-        msgValidate(){
+        message: function(){
 
             if(this.message){
 
@@ -127,8 +127,8 @@ export default {
         submit(){
             
             //User fat arrow to prevent creating local function scope
-            axios.post("https://ramraja.dev/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
-            //axios.post("http://localhost:3000/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
+            //axios.post("https://ramraja.dev/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
+            axios.post("http://localhost:3000/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
                 
                 name: this.name, 
                 email: this.email,
@@ -138,7 +138,7 @@ export default {
                 }).then( response => {
 
                     //console.log("SUCESSS");
-                    //console.log(response);
+                    console.log(response);
                     this.status = "success";
                     //Another way to access modal (child) component method
                     //this.$refs.modal.showModal();
@@ -146,7 +146,7 @@ export default {
                 }).catch( error => {
 
                     //console.log("ERROR");
-                    //console.log(error);
+                    console.log(error);
                     this.status = "error";
 
                 });
@@ -156,22 +156,22 @@ export default {
         },
         checkForm(){
 
-            if(!this.nameValidate){
+            if(!this.name){
 
                 this.nameReq = true;
 
             }
-            if(!this.subValidate){
+            if(!this.subject){
 
                 this.subjectReq = true;
 
             }
-            if(!this.emailValidate){
+            if(!this.email){
 
                 this.emailReq = true;
 
             }
-            if(!this.msgValidate){
+            if(!this.message){
 
                 this.messageReq = true;
 
@@ -179,7 +179,7 @@ export default {
 
             if(!this.nameReq && !this. subjectReq && !this.emailReq && !this.messageReq){
                 console.log("FORM SUBMITTED");
-                //this.submit();
+                this.submit();
 
             }
 
