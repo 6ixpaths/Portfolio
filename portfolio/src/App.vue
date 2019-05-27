@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <Canvas/>
         <!--<Nav v-on:scrollTo="scrollTo($event)"/>-->
         <Nav/>
         <About id="target1"/>
@@ -11,6 +12,7 @@
 
 <script>
 
+import Canvas from "./components/Canvas.vue";
 import Nav from "./components/Nav.vue";
 import About from "./components/About.vue";
 import Skills from "./components/Skills.vue";
@@ -20,6 +22,7 @@ import Footer from "./components/Footer.vue";
 export default {
   name: "app",
   components: {
+    Canvas,
     Nav,
     About,
     Skills,
