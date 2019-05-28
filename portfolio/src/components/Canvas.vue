@@ -1,5 +1,6 @@
 <template>
-    <div id="particles-js">
+    <div id="particles-js" class="particles-canvas">
+        <button v-on:click="hideCanvas()">CLICK FOR NUDES</button>
     </div>    
 </template>
 
@@ -12,6 +13,15 @@ const particlesJS = window.particlesJS;
 
 export default {
     name: 'Canvas',
+    methods: {
+
+        hideCanvas(){
+
+            console.log("CANVAS CHILD CLICKED");
+            this.$emit('hideCanvasComp', true);
+        }
+
+    },
     mounted: function(){
 
         particlesJS('particles-js',{
@@ -134,11 +144,17 @@ export default {
 
 <style>
 
-canvas{
+.particles-canvas{
 
+    position: absolute;
+    /*background-color: #252934;*/
+    background-image: url("../assets/canvas/st1.jpg");
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 999;
+    z-index: 2000;
+    overflow: hidden;
 
 }
 
