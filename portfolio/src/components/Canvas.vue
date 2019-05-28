@@ -173,14 +173,20 @@ h1{
 
     font-family: "Benguiat-Outline";
     font-size: 9.5rem;
-    color: #ff1515;
+    color: transparent;
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: #ff1515;
+    /*letter-spacing: 0.5rem;*/
 
 }
 
 h2{
 
+    font-family: "Benguiat";
     font-size: 3.5rem;
-    color: #455A64;
+        color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #ff1515;
 
 }
 
@@ -192,10 +198,28 @@ h2{
 
 .btn-enter{
 
+    font-family: "Benguiat";
+    color: #ff1515;
+    border-color: #ff1515;
     width: 175px;
     font-size: 2rem;
 
 }
+
+.btn-enter:hover{
+
+    background-color: #ff1515;
+    border-color: #ff1515;
+
+}
+
+ .btn-enter:active{
+    
+    background-color: #ff1515 !important;
+    border-color: #ff1515 !important;
+    border-color: #ff1515 !important;
+
+ }
 
 .particles-canvas{
 
