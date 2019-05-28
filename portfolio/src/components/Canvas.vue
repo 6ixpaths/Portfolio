@@ -1,7 +1,18 @@
 <template>
+<div>
     <div id="particles-js" class="particles-canvas">
-        <button v-on:click="hideCanvas()">CLICK FOR NUDES</button>
-    </div>    
+        <div class="container-fluid h-100 container-canvas">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-12 text-center">
+                    <h1>RAM RAJA</h1>
+                    <h2>FULL STACK WEB DEVELOPER</h2>
+                    <button v-on:click="hideCanvas()" type="button" class="btn btn-outline-primary btn-enter mt-5">ENTER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>    
 </template>
 
 
@@ -38,7 +49,7 @@ export default {
                 "value": "#ffffff"
                 },
                 "shape": {
-                "type": "star",
+                "type": "circle",
                 "stroke": {
                     "width": 0,
                     "color": "#000000"
@@ -81,7 +92,7 @@ export default {
                 },
                 "move": {
                 "enable": true,
-                "speed": 3,
+                "speed": 2,
                 "direction": "top",
                 "random": true,
                 "straight": true,
@@ -142,7 +153,49 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+@font-face {
+  font-family: "Benguiat-Outline";
+  src: url('../assets/fonts/PLBenguiatCaslon-Outline.otf');
+}
+@font-face {
+  font-family: "Benguiat-Shadow";
+  src: url('../assets/fonts/PLBenguiatCaslon-Shadow.otf');
+}
+@font-face {
+  font-family: "Benguiat";
+  src: url('../assets/fonts/PLBenguiatCaslon.otf');
+}
+/*@import url("../assets/fonts/PLBenguiatCaslon-Outline.otf");*/
+
+h1{
+
+    font-family: "Benguiat-Outline";
+    font-size: 9.5rem;
+    color: #ff1515;
+
+}
+
+h2{
+
+    font-size: 3.5rem;
+    color: #455A64;
+
+}
+
+.container-canvas{
+
+    position: absolute;
+
+}
+
+.btn-enter{
+
+    width: 175px;
+    font-size: 2rem;
+
+}
 
 .particles-canvas{
 
@@ -154,7 +207,6 @@ export default {
     width: 100%;
     height: 100%;
     z-index: 2000;
-    overflow: hidden;
 
 }
 
