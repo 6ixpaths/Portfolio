@@ -174,7 +174,7 @@ h1{
     font-family: "Benguiat-Outline";
     font-size: 9.5rem;
     color: transparent;
-    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-width: 3.5px;
     -webkit-text-stroke-color: #ff1515;
     /*letter-spacing: 0.5rem;*/
 
