@@ -208,6 +208,7 @@ h2{
 
 .btn-enter:hover{
 
+    color: #FFFFFF;
     background-color: #ff1515;
     border-color: #ff1515;
 
