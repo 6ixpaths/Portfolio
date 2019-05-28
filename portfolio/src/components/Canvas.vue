@@ -183,10 +183,8 @@ h1{
 h2{
 
     font-family: "Benguiat";
-    font-size: 3.5rem;
-        color: transparent;
-    -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: #ff1515;
+    font-size: 3rem;
+    color: #ff1515;
 
 }
 
@@ -234,5 +232,22 @@ h2{
     z-index: 2000;
 
 }
+
+@media (max-width: 575.98px){
+
+    h1{
+
+        font-size: 4.5rem;
+        
+    }
+
+    h2{
+
+        font-size: 2.5rem;
+
+    }
+
+}
+
 
 </style>
