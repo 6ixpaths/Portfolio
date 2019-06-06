@@ -46,17 +46,17 @@ export default {
             aboutinfos: [
                 {
                    header: 'DESIGN',
-                   info: 'Build prototype and design wireframes. Bring the latest in design languages to implement elegant and functional in UI/UX for the end user.',
+                   info: 'Build prototype and design wireframes. Bring the latest in design languages to implement elegant and functional UI/UX for the end user.',
                    imgURL: require('../assets/graphic-design.svg')
                 },
                 {
                    header: 'BUILD',
-                   info: 'Create fully responsive and interactive web pages conveying the message that you need. Can build SPA or full front & backend depending project scope.',
+                   info: 'Create fully responsive and interactive web pages conveying the message that you need. Can build SPA or full front end and back end depending on project scope.',
                    imgURL: require('../assets/coding.svg')
                 },
                 {
                    header: 'DEPLOY',
-                   info: 'Help with server setup, migration & hosting. Create quick & fast development pipelines for faster delivery to production',
+                   info: 'Help with server setup, migration & hosting. Create quick & fast development pipelines for faster delivery to production.',
                    imgURL: require('../assets/server.svg')
                 }
             ]
