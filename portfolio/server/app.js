@@ -21,6 +21,13 @@ app.get('/api/test', (req, res) => {
     res.send('Hello World!');
 
 })
+
+app.get('/api/healthcheck', (req, res) => {
+
+    console.log("Health Check");
+    res.send('Health Check');
+
+})
  
 
 app.post('/api/sendMail', (req, res) => {
@@ -60,7 +67,8 @@ app.post('/api/sendMail', (req, res) => {
             
             if(error) {
                 
-                res.send(error)
+                res.send(error);
+                console.log("Error in msg");
 
             }else {
                 
@@ -81,4 +89,4 @@ https.createServer({
     passphrase: 'Diablos07'
 }, app).listen(port, () => console.log("HTTPS server listening on port 3000"));
 */
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Server app listening on port ${port}!`))
