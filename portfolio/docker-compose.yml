@@ -1,7 +1,7 @@
 version: '3'
 services:
   portfolio:
-    container_name: portimusprime
+    container_name: frontend
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,3 +10,12 @@ services:
       - '/app/node_modules'
     ports:
       - '8080:8080'
+  server:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    volumes:
+      - '/app/node_modules'
+    ports:
+      - '3000:3000'    
