@@ -42,3 +42,16 @@ sudo docker run -p 8080:8080 --detach --name porty portfolio:latest
 ```
 
 This will bind your `localhost:8080` to the containers port `8080`
+
+
+## Run with docker-compose
+
+```
+sudo docker run -p 8080:8080 --detach --name porty portfolio:latest
+```
+
+### Deactivate with docker-compose
+
+```
+docker-compose down
+```
