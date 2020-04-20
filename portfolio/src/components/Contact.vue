@@ -127,7 +127,8 @@ export default {
         submit(){
             
             //User fat arrow to prevent creating local function scope
-            axios.post("https://ramraja.dev/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
+            console.log(process.env.VUE_APP_API_ROOT);
+            axios.post(process.env.VUE_APP_API_ROOT+"/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
             //axios.post("http://localhost:3000/api/sendMail", {headers: {"Access-Control-Allow-Origin": "*"},
                 
                 name: this.name, 
@@ -178,7 +179,7 @@ export default {
             }
 
             if(!this.nameReq && !this. subjectReq && !this.emailReq && !this.messageReq){
-                console.log("FORM SUBMITTED");
+                
                 this.submit();
 
             }
