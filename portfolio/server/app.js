@@ -24,8 +24,8 @@ app.get('/api/test', (req, res) => {
 
 app.get('/api/healthcheck', (req, res) => {
 
-    console.log("Health Check");
-    res.send('Health Check');
+    console.log("Health Checkaszz");
+    res.send('Health Checkers');
 
 })
  
