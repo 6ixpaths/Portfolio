@@ -1,14 +1,10 @@
 kind: pipeline
 type: docker
-name: portfolio
-
+name: default
+   
 steps:
-- name: build
-  image: golang
+- name: test
+  image: alpine
   commands:
-  - go build
-  - go test
-
-trigger:
-  branch:
-  - develop
+  - echo hello
+  - echo world
