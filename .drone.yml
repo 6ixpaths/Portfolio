@@ -4,5 +4,16 @@ name: default
    
 steps:
 - name: test
+  settings:
+    context: ./home/ramraja/
   commands:
-  - mkdir dronerz
+    - cd $HOME
+    - mkdir WTF
+
+# kind: pipeline
+# steps:
+# - name: deploy
+#   image: node:latest
+#   commands:
+#     - npm install
+#     - npm run serve
