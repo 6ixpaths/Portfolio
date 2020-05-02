@@ -5,4 +5,4 @@ name: default
 steps:
 - name: test
   commands:
-  - npm install
+  - mkdir dronerz
